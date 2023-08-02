@@ -17,7 +17,9 @@ form>.option {
     display: flex;
     flex-direction: column;
 }
-
+label { 
+    color: white;
+}
 input {
     border-radius: 10px;
     outline: none;
