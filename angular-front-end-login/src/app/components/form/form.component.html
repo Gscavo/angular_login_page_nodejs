@@ -1,1 +1,40 @@
-
+<form (ngSubmit)="submit()">
+    <div class="option">
+        <label for="firstName"> Nome </label>
+        <input type="text" name="firstName" id="firstName" ngModel>
+    </div>
+    <div class="option">
+        <label for="lastName"> Sobrenome </label>
+        <input type="text" name="lastName" id="lastName" ngModel>
+    </div>
+    <div class="option">
+        <label for="email"> Email </label>
+        <input type="text" name="email" id="email" ngModel>
+    </div>
+    <div class="option">
+        <label for="password"> Senha </label>
+        <input type="password" name="password" id="password" ngModel>
+    </div>
+    <div class="option">
+        <label for="age"> Idade </label>
+        <input type="number" name="age" id="age" ngModel>
+    </div>
+    <div class="sex-group">
+        <label for="sex"> Sexo </label>
+        <div id="sex">
+            <div class="option">
+                <input type="radio" name="sex" id="sexF" class="radio" ngModel>
+                <label for="sexF"> Feminino </label>
+            </div>
+            <div class="option">
+                <input type="radio" name="sex" id="sexM" class="radio" ngModel>
+                <label for="sexM"> Masculino </label>
+            </div>
+            <div class="option">
+                <input type="radio" name="sex" id="sexN" class="radio" ngModel>
+                <label for="sexN"> Não desejo informar </label>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="Cadastrar Usuário">
+</form>

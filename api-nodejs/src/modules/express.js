@@ -1,9 +1,11 @@
 const express = require('express');
 const userRouter = require('../routes/user.router');
+const cors = require('cors');
 const app = express();
 const port = 8080;
 
 app.use(express.json());
+app.use(cors());
 
 let router_list = [
     '/user',
