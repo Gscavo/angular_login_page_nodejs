@@ -14,6 +14,7 @@ import { UsersListComponent } from './pages/users-list/users-list.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
     UsersListComponent,
     BackButtonComponent,
     ButtonsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
