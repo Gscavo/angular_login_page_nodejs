@@ -19,23 +19,23 @@
         <label for="age"> Idade </label>
         <input type="number" name="age" id="age" ngModel>
     </div>
-    <div class="sex-group">
+    <div class="option sex-group">
         <label for="sex"> Sexo </label>
         <div id="sex">
-            <div class="option">
+            <div class="option sex">
                 <input type="radio" name="sex" class="radio" value="F" ngModel>
                 <label for="sexF"> Feminino </label>
             </div>
-            <div class="option">
+            <div class="option sex">
                 <input type="radio" name="sex" class="radio" value="M" ngModel>
                 <label for="sexM"> Masculino </label>
             </div>
-            <div class="option">
+            <div class="option sex">
                 <input type="radio" name="sex" class="radio" value="N" ngModel>
                 <label for="sexN"> Não desejo informar </label>
             </div>
         </div>
     </div>
-    <input type="submit" value="Cadastrar Usuário">
+    <button type="submit"> Cadastrar Usuário </button>
     <app-back-button></app-back-button>
 </form>
