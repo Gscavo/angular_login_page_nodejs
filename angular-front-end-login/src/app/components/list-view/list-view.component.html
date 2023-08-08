@@ -1,1 +1,5 @@
-<p>list-view works!</p>
+<button type="button" (click)="sendMessage()" style="width: 100px; height: 100px;">Send</button>
+
+<ul>
+    <li *ngFor="let message of receivedMessages"> {{ message }}</li>
+</ul>
