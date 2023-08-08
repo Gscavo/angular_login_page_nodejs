@@ -1,4 +1,3 @@
-const { connect } = require('mongoose');
 const uuidv4 = require('./uuidv4');
 const WebSocket = require('ws');
 
