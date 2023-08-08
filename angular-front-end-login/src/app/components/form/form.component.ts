@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { UserModel } from 'src/app/model/UserModel';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -16,16 +17,21 @@ export class FormComponent implements OnInit {
   constructor(private service: UsersService) {  }
   
   ngOnInit(): void {
-    
+    this.service.connectToWebSocket();
   }
 
 
-  submit() {
-    console.log('Form submited!')
-  }
+  submit(form: NgForm) {
+      const {firstName, lastName, email, age, sex} = form.value;
+      const user: UserModel = {
+        firstName,
+        lastName,
+        email,
+        age,
+        sex
+      };
 
-  setUserData() {
-
+      this.service.sendMessage(JSON.stringify(user));
   }
 
 }

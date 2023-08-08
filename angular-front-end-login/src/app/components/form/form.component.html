@@ -1,4 +1,4 @@
-<form (ngSubmit)="submit()">
+<form #form="ngForm" (ngSubmit)="submit(form)">
     <div class="option">
         <label for="firstName"> Nome </label>
         <input type="text" name="firstName" id="firstName" ngModel>
@@ -23,15 +23,15 @@
         <label for="sex"> Sexo </label>
         <div id="sex">
             <div class="option">
-                <input type="radio" name="sex" id="sexF" class="radio" ngModel>
+                <input type="radio" name="sex" class="radio" value="F" ngModel>
                 <label for="sexF"> Feminino </label>
             </div>
             <div class="option">
-                <input type="radio" name="sex" id="sexM" class="radio" ngModel>
+                <input type="radio" name="sex" class="radio" value="M" ngModel>
                 <label for="sexM"> Masculino </label>
             </div>
             <div class="option">
-                <input type="radio" name="sex" id="sexN" class="radio" ngModel>
+                <input type="radio" name="sex" class="radio" value="N" ngModel>
                 <label for="sexN"> Não desejo informar </label>
             </div>
         </div>
