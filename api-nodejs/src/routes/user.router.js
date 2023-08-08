@@ -6,11 +6,13 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         const users = await UserModel.find({});
+        console.log(req.wss.broadcast)
         res.status(200).json(users);
     } catch (error) {
         console.log(error.message);
     }
 });
+
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id;
