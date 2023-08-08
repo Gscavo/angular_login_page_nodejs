@@ -2,13 +2,17 @@ const express = require('express');
 const userRouter = require('../routes/user.router');
 const cors = require('cors');
 const app = express();
+
 const port = 8080;
 
 app.use(express.json());
 app.use(cors());
 
 let router_list = [
-    '/user',
+    {
+        path: '/user',
+        router: userRouter,
+    }
 ]
 
 app.use( (req, res, next) => {
@@ -26,23 +30,21 @@ app.get("/getData", (req, res) => {
     res.redirect('/user/');
 })
 
-function printUrls(router = app._router, path) {
+function printUrls(router = app._router, path = undefined) {
     let index = 0;
     router.stack.forEach(el => {
         if (el.route) {
             console.log(`- http://localhost:${port}${path?path:''}${el.route.path}`);
         }
         if (el.name === 'router') {
-            printUrls(el.handle, router_list[index]);
+            printUrls(el.handle, router_list[index].path);
             index++;
         }   
     });
 }
+
 router_list.forEach((el) => {
-    app.use(el, userRouter);
+    app.use(el.path, el.router);
 })
 
-app.listen(port, () => {
-    console.log(`Rodando app na porta ${port}\nLinks mapeados:`);
-    printUrls();
-})
+module.exports = {app, printUrls, port};
