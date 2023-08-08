@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,5 +7,91 @@
 }
 
 body {
-    background-color: #1e1e1e/* #F7F3E3 */;
+    /* background-color: #440f0f; #F7F3E3 */
+    background-image: linear-gradient(to top, red, orange);
+    height: 100vh;
+}
+
+button:hover {
+    scale: 1.1;
+}
+
+button:active {
+    scale: .9;
+    transition: .05s;
+}
+
+.custom-shape-divider-bottom-1691457199 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+.custom-shape-divider-bottom-1691457199 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 323px;
+}
+
+.custom-shape-divider-bottom-1691457199 .shape-fill {
+    fill: #392596;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1691457199 svg {
+        width: calc(300% + 1.3px);
+        height: 345px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1691457199 svg {
+        width: calc(300% + 1.3px);
+        height: 279px;
+    }
+}
+
+.custom-shape-divider-top-1691457416 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.custom-shape-divider-top-1691457416 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 323px;
+}
+
+.custom-shape-divider-top-1691457416 .shape-fill {
+    fill: #B8488D;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-top-1691457416 svg {
+        width: calc(300% + 1.3px);
+        height: 345px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1691457416 svg {
+        width: calc(300% + 1.3px);
+        height: 279px;
+    }
 }

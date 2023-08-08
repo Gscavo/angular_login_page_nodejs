@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+}
+
+button {
+    min-height: 60px;
+    width: 300px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 15px 30px;
+    font-family: 'Archivo Black', sans-serif;
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: 0 0 20px rgb(68, 68, 68);
+    background-color: #ffffff;
+}
+
+#show {
+    margin-bottom: 20px;    
+}

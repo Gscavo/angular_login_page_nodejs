@@ -1,0 +1,10 @@
+footer {
+    color: white;
+   /*  background-image: linear-gradient(to right, blue, yellow,blue); */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: end;
+    padding: 2px 5px;
+    
+}
