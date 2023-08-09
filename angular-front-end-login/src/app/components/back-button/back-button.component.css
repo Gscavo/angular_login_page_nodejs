@@ -1,4 +1,7 @@
 button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
     border-radius: 25px;
     height: 30px;
     width: 100px;
@@ -10,5 +13,4 @@ button {
     padding: auto;
     text-align: center;
     text-anchor: middle;
-    margin-top: 10px;
 }
