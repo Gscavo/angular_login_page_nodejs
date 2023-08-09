@@ -49,7 +49,7 @@ export class UsersService {
   }
 
   getUsers(): Observable<UserModel[]> {
-    return this.httpClient.get<UserModel[]>(this.api_url+'getData/');
+    return this.httpClient.get<UserModel[]>(this.api_url+'user/');
   }
 
   getUserById(id: String): Observable<UserModel> {
