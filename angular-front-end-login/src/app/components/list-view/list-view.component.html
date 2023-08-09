@@ -1,5 +1,8 @@
-<button type="button" (click)="sendMessage()" style="width: 100px; height: 100px;">Send</button>
-
 <ul>
-    <li *ngFor="let message of receivedMessages"> {{ message }}</li>
+    <li *ngFor="let message of usersList$">
+        <span class="info" id="name"> Nome: {{message.firstName.concat(' ', message.lastName)}} </span>
+        <span class="info" id="email"> Email: {{message.email}} </span>
+        <span class="info" id="age"> Idade: {{message.age}} </span>
+        <span class="info" id="sex"> Sexo: {{message.sex}} </span>
+    </li>
 </ul>

@@ -15,12 +15,12 @@ let router_list = [
     }
 ]
 
-app.use( (req, res, next) => {
+/* app.use( (req, res, next) => {
     console.log(`Request Type: ${req.method}`);
     console.log(`Requested Path: ${req.originalUrl}`);
     console.log(`Date: ${new Date()}`);
     next();
-})
+}) */
 
 app.get('/', (req, res) => {
     res.contentType('.txt').status(200).send('Servidor Online');

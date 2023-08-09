@@ -10,10 +10,6 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class FormComponent implements OnInit {
 
-  usersList: UserModel[] = [];
-
-  
-
   constructor(private service: UsersService) {  }
   
   ngOnInit(): void {
@@ -21,17 +17,29 @@ export class FormComponent implements OnInit {
   }
 
 
-  submit(form: NgForm) {
-      const {firstName, lastName, email, age, sex} = form.value;
+  submit(form: NgForm): void {
+      const {firstName, lastName, email, password, age, sex} = form.value;
       const user: UserModel = {
         firstName,
         lastName,
         email,
+        password,
         age,
         sex
       };
+      this.createUser(user);
+      this.realtimeUpdateList(user);
 
-      this.service.sendMessage(JSON.stringify(user));
+  }
+
+  createUser(data: UserModel): void {
+    this.service.createUser(data).subscribe(data => {
+      console.log(`Criado o usuário com nome: ${data.firstName}`);
+    });
+  }
+
+  realtimeUpdateList(data: UserModel): void {
+    this.service.sendMessage(JSON.stringify(data));
   }
 
 }

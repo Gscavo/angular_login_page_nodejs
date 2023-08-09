@@ -1,6 +1,5 @@
 const uuidv4 = require('./uuidv4');
 const WebSocket = require('ws');
-
 const clientsList = new Map();
 
 const onConnection = (ws, req) => {
@@ -55,7 +54,7 @@ const onClose = (ws) => {
     clientsList.delete(ws);
 }
 
-module.exports = (server) => {
+module.exports.WebSocketServer = (server) => {
     const wss = new WebSocket.Server({server})
     wss.on('connection', onConnection);
     wss.clientsList = clientsList;

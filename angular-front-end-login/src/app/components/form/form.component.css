@@ -1,5 +1,4 @@
 form{
-    margin-top: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -9,7 +8,7 @@ form{
     border-radius: 40px;
     height: 80vh;
     min-height: 500px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     border: 1px solid #f0e1ba;
 }
 

@@ -14,7 +14,7 @@ export class UsersService {
   
   //real-time-web-socket
   private socket$!: WebSocket;
-  messageReceived: Subject<string> = new Subject<string>();
+  messageReceived$: Subject<string> = new Subject<string>();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class UsersService {
     this.socket$.onmessage = (event) => {
       const message = event.data;
       console.log('Received message: ', message);
-      this.messageReceived.next(message);
+      this.messageReceived$.next(message);
     }
 
     this.socket$.onclose = (event) => {
@@ -48,12 +48,16 @@ export class UsersService {
     this.socket$.close();
   }
 
-  getUsers(): Observable<UserModel> {
-    return this.httpClient.get<UserModel>(this.api_url+'getData/');
+  getUsers(): Observable<UserModel[]> {
+    return this.httpClient.get<UserModel[]>(this.api_url+'getData/');
   }
 
   getUserById(id: String): Observable<UserModel> {
     return this.httpClient.get<UserModel>(this.api_url+id);
+  }
+
+  createUser(user: UserModel): Observable<UserModel> {
+    return this.httpClient.post<UserModel>(this.api_url+"user", user);
   }
 
   setUser(id: String, user: UserModel): Observable<UserModel>{

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, catchError, map, tap } from "rxjs";
 import { UserModel } from "src/app/model/UserModel";
 import { UsersService } from "src/app/services/users.service";
 
@@ -10,17 +9,32 @@ import { UsersService } from "src/app/services/users.service";
 })
 export class ListViewComponent implements OnInit {
 
-  receivedMessages: string[] = [];
-
+  usersList$: UserModel[] = [];
+  /* receivedMessages: string[] = [] ;*/
   constructor(private service: UsersService) {  }
 
   ngOnInit(): void {
     this.service.connectToWebSocket();
-    this.service.messageReceived.subscribe((message: string) => {
-      this.receivedMessages.push(message);
+    this.getUsersList();
+    this.service.messageReceived$.subscribe((message: string) => {
+      const data: UserModel = JSON.parse(message);
+      this.usersList$.push(data);
     });
   }
+
+
+  placeholder() {
+    throw new Error ("Method not implemented");
+  }
   
+  getUsersList(): void {
+    this.service.getUsers().subscribe(data => {
+      this.usersList$ = data;
+    });
+  }
+
+  
+
   sendMessage(): void {
     const message = '{"Hello": "World"}';
     this.service.sendMessage(message);

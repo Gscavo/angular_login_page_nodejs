@@ -1,5 +1,5 @@
 const connectToDatabase = require("./src/database/connect");
-const WebSocketServer = require('./src/modules/ws');
+const {WebSocketServer} = require('./src/modules/ws');
 const {app, printUrls, port} = require('./src/modules/express');
 
 connectToDatabase();
