@@ -10,3 +10,5 @@ const server = app.listen(port, '0.0.0.0', () => {
 });
 
 const webSocket = WebSocketServer(server);
+
+moduler.exports = app;
